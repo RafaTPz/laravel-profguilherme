@@ -10,45 +10,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        header {
-            background-color: #000;
-            color: #fff;
-            padding: 20px 0;
-        }
-
-        header img {
-            width: 50px;
-        }
-
-        header nav div {
-            display: flex;
-            align-items: center;
-        }
-
-        header nav {
-            flex: 1;
-            text-align: center;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .botoes {
-            margin-top: 0.5rem;
-            font-size: 1.5rem;
-            margin-right: 1rem;
-        }
-
-        .botoes a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        .botoes a:hover {
-            text-decoration: underline;
-        }
-
         .welcome-section {
             position: relative;
             background-image: url('/background.png');
@@ -130,21 +91,38 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div>
-                <img src="/logo.jpeg" />
-                <h1>Projeto JK</h1>
+    <header class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand fs-4" href="#">
+                <img src="/logo.jpeg" alt="Projeto JK Logo" width="50">
+                Projeto JK
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav fs-5">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/personagens">Personagens</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/criar">Crie seu personagem</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/historia">História</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sobrenos">Sobre</a>
+                    </li>
+                </ul>
             </div>
-            <div class="botoes">
-                <a href="/">Home</a>
-                <a href="/personagens">Personagens</a>
-                <a href="/criar">Crie seu personagem</a>
-                <a href="/historia">História</a>
-                <a href="/sobrenos">Sobre</a>
-            </div>
-        </nav>
+        </div>
     </header>
+
 
     <section id="personagens" class="section">
         <div class="container">
