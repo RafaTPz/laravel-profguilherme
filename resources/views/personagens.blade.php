@@ -94,7 +94,7 @@
     <header class="navbar navbar-dark bg-dark navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand fs-4" href="#">
-                <img src="/logo.jpeg" alt="Projeto JK Logo" width="50">
+                <img src="/logo2.png" alt="Projeto JK Logo" width="50">
                 Projeto JK
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
