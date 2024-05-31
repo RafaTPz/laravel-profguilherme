@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crie seu Personagem - Projeto JK</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Projeto JK</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         body {
             background-color: #333;
@@ -36,7 +39,6 @@
             background-color: #444;
             color: #fff;
         }
-
 
         .alert {
             margin-top: 20px;
@@ -92,43 +94,37 @@
         </div>
     </header>
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="card">
-                    <div class="card-body">
-                        <h2 class="card-title text-center mb-4">Crie seu Personagem</h2>
 
-                        @if (session('success'))
-                            <div class="alert alert-success">
-                                {{ session('success') }}
-                            </div>
-                        @endif
+    <section>
+        <div class="container">
+            <div class="card">
+                <h2 class="card-title text-center mb-4">Sobre Nós</h2>
 
-                        <form action="{{ route('personagens.store') }}" method="POST">
-                            @csrf
-                            <div class="mb-3">
-                                <label for="nome" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="nome" name="nome" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="imagem" class="form-label">URL da Imagem</label>
-                                <input type="url" class="form-control" id="imagem" name="imagem" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="historia" class="form-label">História</label>
-                                <textarea class="form-control" id="historia" name="historia" rows="3"
-                                    required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Criar Personagem</button>
-                        </form>
-                    </div>
+                <div class="card-body">
+                    <p>A Projeto JK é uma empresa fictícia sediada em Indaiatuba, São Paulo. Fundada na Fundação
+                        Indaiatubana de Educação e Cultura (FIEC), nossa empresa tem como objetivo principal
+                        proporcionar experiências educacionais e culturais de qualidade para todos.</p>
+
+                    <p>Nosso compromisso é com a excelência, tanto na prestação de serviços quanto no
+                        desenvolvimento de produtos educacionais inovadores. Trabalhamos arduamente para criar
+                        um ambiente onde o aprendizado seja acessível, envolvente e inspirador.</p>
+
+                    <p>Estamos constantemente buscando maneiras de melhorar e expandir nossos serviços, sempre
+                        com a missão de promover o conhecimento e o crescimento pessoal. Acreditamos que a
+                        educação e a cultura são ferramentas poderosas para transformar vidas e comunidades.</p>
+
+                    <p>Entre em contato conosco para saber mais sobre nossos serviços, produtos e eventos.
+                        Estamos sempre abertos a parcerias e colaborações que possam enriquecer ainda mais nossa
+                        missão.</p>
+
+                    <img src="/logo.jpeg" alt="Projeto JK Logo" width="300" style="display: block; margin: 0 auto;">
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
     <footer>
-        <div class="containerf">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <p>&copy; 2024 Projeto JK. Todos os direitos reservados.</p>
@@ -143,6 +139,7 @@
             </div>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

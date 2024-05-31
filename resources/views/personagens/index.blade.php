@@ -140,10 +140,7 @@
                         <a class="nav-link" href="/personagens/criar">Crie seu personagem</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/historia">História</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/sobrenos">Sobre</a>
+                        <a class="nav-link" href="/sobre">Sobre</a>
                     </li>
                 </ul>
             </div>
@@ -164,7 +161,6 @@
                         <div class="card-body">
                             <h5 class="card-title">Satoro Gojou</h5>
                             <p class="card-text">O mais poderoso.</p>
-                            <a href="#" class="btn btn-primary">Saiba mais</a>
                         </div>
                     </div>
                 </div>
@@ -174,7 +170,6 @@
                         <div class="card-body">
                             <h5 class="card-title">Yuji Itadori</h5>
                             <p class="card-text">O protagonista.</p>
-                            <a href="#" class="btn btn-primary">Saiba mais</a>
                         </div>
                     </div>
                 </div>
@@ -184,7 +179,6 @@
                         <div class="card-body">
                             <h5 class="card-title">Todo</h5>
                             <p class="card-text">O melhor bestofriendo que você poderia ter.</p>
-                            <a href="#" class="btn btn-primary">Saiba mais</a>
                         </div>
                     </div>
                 </div>
@@ -211,11 +205,12 @@
                                 <h5 class="card-title">{{ $personagem->nome }}</h5>
                                 <p class="card-text">{{ $personagem->historia }}</p>
                                 <div class="btn-group">
-                                    <a href="#" class="btn btn-primary">Saiba mais</a>
+                                    <a href="{{ route('personagens.edit', $personagem->id) }}"
+                                        class="btn btn-primary m-1">Editar</a>
                                     <form action="{{ route('personagens.destroy', $personagem->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Deletar</button>
+                                        <button type="submit" class="btn btn-danger m-1">Deletar</button>
                                     </form>
                                 </div>
                             </div>
@@ -237,7 +232,7 @@
                 <div class="col-lg-12">
                     <a href="#">Termos de Serviço</a>
                     <a href="#">Política de Privacidade</a>
-                    <a href="#">Sobre Nós</a>
+                    <a href="/sobre">Sobre Nós</a>
                 </div>
             </div>
         </div>

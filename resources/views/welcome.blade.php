@@ -96,10 +96,7 @@
                         <a class="nav-link" href="/personagens/criar">Crie seu personagem</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/historia">História</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/sobrenos">Sobre</a>
+                        <a class="nav-link" href="/sobre">Sobre</a>
                     </li>
                 </ul>
             </div>
@@ -113,7 +110,7 @@
                 <span id="bemvindo" class="col-lg-8 offset-lg-2">
                     <h2 class="display-4">Bem-vindo ao mundo de Jujutsu Kaisen</h2>
                     <p class="lead">Explore o universo dos feitiços, maldições e lutas épicas.</p>
-                    <a href="#" class="btn btn-primary btn-lg">Saiba mais</a>
+                    <a href="#personagens" class="btn btn-primary btn-lg">Saiba mais</a>
                 </span>
             </div>
         </div>
@@ -151,26 +148,7 @@
         <div class="container section-buttons">
             <div class="row">
                 <div class="col">
-                    <a href="/criar" class="btn btn-outline-light">Crie seu Personagem</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="historia" class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <h2>Conheça a História</h2>
-                    <p>Explore a trama envolvente e emocionante que acompanha as aventuras dos personagens de Jujutsu
-                        Kaisen. Descubra os segredos do passado e os desafios do presente.</p>
-                </div>
-            </div>
-        </div>
-        <div class="container section-buttons">
-            <div class="row">
-                <div class="col">
-                    <a href="/historia" class="btn btn-outline-light">Conheça a História</a>
+                    <a href="/personagens/criar" class="btn btn-outline-light">Crie seu Personagem</a>
                 </div>
             </div>
         </div>
@@ -189,7 +167,7 @@
         <div class="container section-buttons">
             <div class="row">
                 <div class="col">
-                    <a href="/sobrenos" class="btn btn-outline-light">Sobre Nós</a>
+                    <a href="/sobre" class="btn btn-outline-light">Sobre Nós</a>
                 </div>
             </div>
         </div>
@@ -206,7 +184,7 @@
                 <div class="col-lg-12">
                     <a href="#">Termos de Serviço</a>
                     <a href="#">Política de Privacidade</a>
-                    <a href="#">Sobre Nós</a>
+                    <a href="/sobre">Sobre Nós</a>
                 </div>
             </div>
         </div>

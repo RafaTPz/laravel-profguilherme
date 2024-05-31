@@ -37,7 +37,6 @@
             color: #fff;
         }
 
-
         .alert {
             margin-top: 20px;
         }
@@ -84,6 +83,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/personagens/criar">Crie seu personagem</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="/sobre">Sobre</a>
                     </li>
@@ -91,36 +91,33 @@
             </div>
         </div>
     </header>
-
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-8">
+            <div class="col-md-8">
                 <div class="card">
+                <h2 class="card-title text-center mb-4">Editar Personagem</h2>
+
                     <div class="card-body">
-                        <h2 class="card-title text-center mb-4">Crie seu Personagem</h2>
-
-                        @if (session('success'))
-                            <div class="alert alert-success">
-                                {{ session('success') }}
-                            </div>
-                        @endif
-
-                        <form action="{{ route('personagens.store') }}" method="POST">
+                        <form action="{{ route('personagens.update', $personagem->id) }}" method="POST">
                             @csrf
+                            @method('PUT')
+
                             <div class="mb-3">
                                 <label for="nome" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="nome" name="nome" required>
+                                <input type="text" class="form-control" id="nome" name="nome"
+                                    value="{{ $personagem->nome }}" required>
                             </div>
                             <div class="mb-3">
                                 <label for="imagem" class="form-label">URL da Imagem</label>
-                                <input type="url" class="form-control" id="imagem" name="imagem" required>
+                                <input type="url" class="form-control" id="imagem" name="imagem"
+                                    value="{{ $personagem->imagem }}" required>
                             </div>
                             <div class="mb-3">
                                 <label for="historia" class="form-label">História</label>
                                 <textarea class="form-control" id="historia" name="historia" rows="3"
-                                    required></textarea>
+                                    required>{{ $personagem->historia }}</textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Criar Personagem</button>
+                            <button type="submit" class="btn btn-primary">Atualizar</button>
                         </form>
                     </div>
                 </div>
