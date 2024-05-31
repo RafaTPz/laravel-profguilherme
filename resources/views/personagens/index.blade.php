@@ -8,7 +8,20 @@
     <title>Personagens - Projeto JK</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const deleteForms = document.querySelectorAll('form[action*="personagens/"]');
 
+            deleteForms.forEach(form => {
+                form.addEventListener('submit', function (event) {
+                    const confirmed = confirm('Tem certeza que deseja deletar este personagem?');
+                    if (!confirmed) {
+                        event.preventDefault();
+                    }
+                });
+            });
+        });
+    </script>
     <style>
         .welcome-section {
             position: relative;
@@ -53,8 +66,22 @@
             background-color: transparent;
         }
 
+        .card-img-top-wrapper {
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+
         .card-img-top {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
             border-radius: 10px;
+        }
+
+        .btn-group .btn {
+            flex: 1;
         }
 
         .card-body {
@@ -93,7 +120,7 @@
 <body>
     <header class="navbar navbar-dark bg-dark navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand fs-4" href="#">
+            <a class="navbar-brand fs-4" href="/">
                 <img src="/logo2.png" alt="Projeto JK Logo" width="50">
                 Projeto JK
             </a>
@@ -110,7 +137,7 @@
                         <a class="nav-link" href="/personagens">Personagens</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/criar">Crie seu personagem</a>
+                        <a class="nav-link" href="/personagens/criar">Crie seu personagem</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/historia">História</a>
@@ -122,7 +149,6 @@
             </div>
         </div>
     </header>
-
 
     <section id="personagens" class="section">
         <div class="container">
@@ -166,6 +192,40 @@
         </div>
     </section>
 
+    <section id="criacoes" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Suas Criações</h2>
+                    <p>Veja os personagens criados pelos usuários e suas histórias fascinantes.</p>
+                </div>
+            </div>
+            <div class="row">
+                @foreach($personagens as $personagem)
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <div class="card-img-top-wrapper">
+                                <img src="{{ $personagem->imagem }}" class="card-img-top" alt="{{ $personagem->nome }}">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $personagem->nome }}</h5>
+                                <p class="card-text">{{ $personagem->historia }}</p>
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-primary">Saiba mais</a>
+                                    <form action="{{ route('personagens.destroy', $personagem->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Deletar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <div class="row">
@@ -178,7 +238,6 @@
                     <a href="#">Termos de Serviço</a>
                     <a href="#">Política de Privacidade</a>
                     <a href="#">Sobre Nós</a>
-                    <a href="#">Contato</a>
                 </div>
             </div>
         </div>

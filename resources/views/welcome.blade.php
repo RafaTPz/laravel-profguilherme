@@ -76,7 +76,7 @@
 <body>
     <header class="navbar navbar-dark bg-dark navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand fs-4" href="#">
+            <a class="navbar-brand fs-4" href="/">
                 <img src="/logo2.png" alt="Projeto JK Logo" width="50">
                 Projeto JK
             </a>
@@ -93,7 +93,7 @@
                         <a class="nav-link" href="/personagens">Personagens</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/criar">Crie seu personagem</a>
+                        <a class="nav-link" href="/personagens/criar">Crie seu personagem</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/historia">História</a>
@@ -207,7 +207,6 @@
                     <a href="#">Termos de Serviço</a>
                     <a href="#">Política de Privacidade</a>
                     <a href="#">Sobre Nós</a>
-                    <a href="#">Contato</a>
                 </div>
             </div>
         </div>
