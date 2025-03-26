@@ -1,0 +1,14 @@
+para o laravel:
+
+composer install
+php artisan serve 
+
+
+
+para o vite:
+
+npm i
+npm run dev
+
+criar arquivo database.sqlite na pasta database e depois:
+php artisan migrate     // para integrar os bancos de dados ao php
